@@ -1,4 +1,4 @@
-
+local discordwebhook = "idk"
 local request = (request or syn.request) or (http or http.request) or http_request
 local data = {
     ['embeds'] = {
@@ -11,7 +11,7 @@ local data = {
 
 local response = request(
 {
-Url = sendwhenexecuteddiscordtoken,
+Url = discordwebhook,
 Method = 'Post',
 Headers = {
 ['Content-Type'] = 'application/json'
